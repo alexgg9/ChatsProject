@@ -25,6 +25,8 @@ idea
 .settings
 .springBeans
 .sts4-cache
+.bin/
+.metadata/
 
 ### NetBeans ###
 /nbproject/private/
