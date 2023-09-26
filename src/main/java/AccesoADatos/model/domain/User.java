@@ -1,9 +1,14 @@
 package AccesoADatos.model.domain;
 
+import java.io.Serializable;
 import java.util.Objects;
 
-public class User {
-    private String nickname;
+
+public class User implements Serializable {
+    
+	private static final long serialVersionUID = 1L;
+	private String nickname;
+    
 
     public User() {
     }

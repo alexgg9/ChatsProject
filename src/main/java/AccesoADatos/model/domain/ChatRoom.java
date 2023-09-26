@@ -1,9 +1,10 @@
 package AccesoADatos.model.domain;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ChatRoom {
+public class ChatRoom implements Serializable {
 
      private String name;
      private ArrayList<User> users = new ArrayList<>();
