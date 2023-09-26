@@ -8,6 +8,8 @@ target/
 idea
 =======
 .idea/
+.metadata/
+.bin/
 >>>>>>> 82362fee4e446fb3f71b748b98436e863d681b5f
 .idea/modules.xml
 .idea/jarRepositories.xml
