@@ -6,14 +6,24 @@ import java.util.List;
 
 public class ChatRoom implements Serializable {
 
-     private String name;
-     private ArrayList<User> users = new ArrayList<>();
+	private static final long serialVersionUID = 1L;
+	private String name;
+     private ArrayList<String> users = new ArrayList<>();
      private ArrayList<Message> messages = new ArrayList<>();
 
     public ChatRoom() {
     }
+    
+    
 
-    public ChatRoom(String name, ArrayList<User> users, ArrayList<Message> messages) {
+    public ChatRoom(String name) {
+		super();
+		this.name = name;
+	}
+
+
+
+	public ChatRoom(String name, ArrayList<String> users, ArrayList<Message> messages) {
         this.name = name;
         this.users = users;
         this.messages = messages;
@@ -27,11 +37,11 @@ public class ChatRoom implements Serializable {
         this.name = name;
     }
 
-    public ArrayList<User> getUsers() {
+    public ArrayList<String> getUsers() {
         return users;
     }
 
-    public void setUsers(ArrayList<User> users) {
+    public void setUsers(ArrayList<String> users) {
         this.users = users;
     }
 

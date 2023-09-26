@@ -3,8 +3,16 @@ package AccesoADatos.model.domain;
 import java.io.Serializable;
 import java.time.LocalDateTime;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement (name = "Message")
 public class Message implements Serializable {
-    private User sender;
+ 
+	private static final long serialVersionUID = 1L;
+	
+	
+	private User sender;
     private String content;
     private LocalDateTime timestamp;
 
@@ -16,7 +24,7 @@ public class Message implements Serializable {
         this.content = content;
         this.timestamp = timestamp;
     }
-
+    @XmlElement (name = "Sender")
     public User getSender() {
         return sender;
     }
@@ -24,7 +32,7 @@ public class Message implements Serializable {
     public void setSender(User sender) {
         this.sender = sender;
     }
-
+ @XmlElement (name = "Content")
     public String getContent() {
         return content;
     }
@@ -32,7 +40,7 @@ public class Message implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
-
+  @XmlElement (name = "Timestamp")
     public LocalDateTime getTimestamp() {
         return timestamp;
     }

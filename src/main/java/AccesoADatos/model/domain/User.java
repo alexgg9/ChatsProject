@@ -3,20 +3,24 @@ package AccesoADatos.model.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
 
+ @XmlRootElement ( name = "User")
 public class User implements Serializable {
     
 	private static final long serialVersionUID = 1L;
 	private String nickname;
 
-    
 
     public User() {
     }
 
-    public User(String nickname) {
+    public User(String nickname, ChatRoom nameChat) {
         this.nickname = nickname;
+  
     }
+    @XmlElement( name = "Nickname")
     public String getNickname() {
         return nickname;
     }
@@ -39,4 +43,5 @@ public class User implements Serializable {
                 "nickname='" + nickname + '\'' +
                 '}';
     }
-}
+
+ }
