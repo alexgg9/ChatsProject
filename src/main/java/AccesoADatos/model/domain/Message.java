@@ -1,8 +1,9 @@
 package AccesoADatos.model.domain;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
-public class Message {
+public class Message implements Serializable {
     private User sender;
     private String content;
     private LocalDateTime timestamp;
