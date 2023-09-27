@@ -16,7 +16,7 @@ public class User implements Serializable {
     public User() {
     }
 
-    public User(String nickname, ChatRoom nameChat) {
+    public User(String nickname) {
         this.nickname = nickname;
   
     }
