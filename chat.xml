@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ChatRoom>
+    <Messages>
+        <Message>
+            <Content>HOLA SERGIO</Content>
+            <Sender>fcar16</Sender>
+            <Timestamp>Wed Sep 27 11:12:12 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>TONTO</Content>
+            <Sender>fcar16</Sender>
+            <Timestamp>Wed Sep 27 11:12:15 CEST 2023</Timestamp>
+        </Message>
+    </Messages>
+    <Users/>
+</ChatRoom>

@@ -1,38 +1,27 @@
 package AccesoADatos.model.domain;
 
-import java.io.Serializable;
-import java.time.LocalDateTime;
+
+
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 
-@XmlRootElement (name = "Message")
-public class Message implements Serializable {
- 
-	private static final long serialVersionUID = 1L;
-	
-	
-	private User sender;
+@XmlRootElement(name = "Message")
+public class Message {
+    private String sender;
     private String content;
-    private LocalDateTime timestamp;
+    private String timestamp;
 
-    public Message() {
-    }
-
-    public Message(User sender, String content, LocalDateTime timestamp) {
-        this.sender = sender;
-        this.content = content;
-        this.timestamp = timestamp;
-    }
-    @XmlElement (name = "Sender")
-    public User getSender() {
+    @XmlElement(name = "Sender")
+    public String getSender() {
         return sender;
     }
 
-    public void setSender(User sender) {
+    public void setSender(String sender) {
         this.sender = sender;
     }
- @XmlElement (name = "Content")
+
+    @XmlElement(name = "Content")
     public String getContent() {
         return content;
     }
@@ -40,21 +29,13 @@ public class Message implements Serializable {
     public void setContent(String content) {
         this.content = content;
     }
-  @XmlElement (name = "Timestamp")
-    public LocalDateTime getTimestamp() {
+
+    @XmlElement(name = "Timestamp")
+    public String getTimestamp() {
         return timestamp;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
+    public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
-    }
-
-    @Override
-    public String toString() {
-        return "Message{" +
-                "sender=" + sender +
-                ", content='" + content + '\'' +
-                ", timestamp=" + timestamp +
-                '}';
     }
 }
