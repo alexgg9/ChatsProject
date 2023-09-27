@@ -4,12 +4,18 @@ import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlElementWrapper;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement(name = "ChatRoom")
+
 public class ChatRoom implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 	private String name;
-     private ArrayList<String> users = new ArrayList<>();
-     private ArrayList<Message> messages = new ArrayList<>();
+     private List<User> users = new ArrayList<>();
+     private List<Message> messages = new ArrayList<>();
 
     public ChatRoom() {
     }
@@ -23,7 +29,7 @@ public class ChatRoom implements Serializable {
 
 
 
-	public ChatRoom(String name, ArrayList<String> users, ArrayList<Message> messages) {
+	public ChatRoom(String name, List<User> users, List<Message> messages) {
         this.name = name;
         this.users = users;
         this.messages = messages;
@@ -37,15 +43,18 @@ public class ChatRoom implements Serializable {
         this.name = name;
     }
 
-    public ArrayList<String> getUsers() {
+    @XmlElementWrapper (name = "Users")
+    @XmlElement(name = "User")
+    public List<User> getUsers() {
         return users;
     }
 
-    public void setUsers(ArrayList<String> users) {
+    public void setUsers(List<User> users) {
         this.users = users;
     }
-
-    public ArrayList<Message> getMessages() {
+    @XmlElementWrapper (name = "Messages")
+    @XmlElement(name = "Message")
+    public List<Message> getMessages() {
         return messages;
     }
 
