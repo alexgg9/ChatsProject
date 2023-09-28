@@ -3,8 +3,13 @@
     <Messages>
         <Message>
             <Content>hola</Content>
-            <Sender>pepe</Sender>
-            <Timestamp>Wed Sep 27 11:21:26 CEST 2023</Timestamp>
+            <Sender>alex</Sender>
+            <Timestamp>Thu Sep 28 13:59:52 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>que tal</Content>
+            <Sender>alex</Sender>
+            <Timestamp>Thu Sep 28 13:59:54 CEST 2023</Timestamp>
         </Message>
     </Messages>
     <Users/>
