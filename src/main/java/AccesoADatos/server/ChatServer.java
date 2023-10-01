@@ -2,77 +2,57 @@ package AccesoADatos.server;
 
 import java.io.*;
 import java.net.*;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.StandardCopyOption;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.List;
 
 
 public class ChatServer {
-    private static List<PrintWriter> clients = new ArrayList<>();
+    public static void main(String[] args){
+        ServerSocket serverSocket = null;
+        boolean serverListening = false;
 
-    public static void main(String[] args) {
-        try {
-            ServerSocket serverSocket = new ServerSocket(12345); // Puerto del servidor
-            System.out.println("Servidor de chat en línea.");
-
-            while (true) {
-                Socket clientSocket = serverSocket.accept();
-                System.out.println("Cliente conectado: " + clientSocket);
-
-                // Agregar el PrintWriter del cliente a la lista de clientes
-                PrintWriter out = new PrintWriter(clientSocket.getOutputStream(), true);
-                clients.add(out);
-
-                // Manejar la comunicación con el cliente en un hilo separado
-                Thread clientThread = new Thread(new ClientHandler(clientSocket, out));
-                clientThread.start();
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    // Clase interna para manejar la comunicación con un cliente
-    private static class ClientHandler implements Runnable {
-        private Socket clientSocket;
-        private PrintWriter out;
-
-        public ClientHandler(Socket clientSocket, PrintWriter out) {
-            this.clientSocket = clientSocket;
-            this.out = out;
+        try{
+            serverSocket = new ServerSocket(8080);
+            serverListening = true;
+        }catch (IOException error){
+            System.out.println("Error al abrir servidor");
         }
 
-        @Override
-        public void run() {
+        Socket socket = null;
+        InputStream in = null;
+        OutputStream out = null;
+
+        if(serverListening){
+            System.out.println("Servidor listo para aceptar conexiones");
             try {
-                BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
+                socket = serverSocket.accept();
+                //el socket está establecido
+                in = socket.getInputStream();
+                String filename = "chat.xml";
+                Path filePath = Path.of(filename);
+                out = new FileOutputStream(filename);
+                byte[] bytes = new byte[8*1024];
+                Files.copy(in, filePath, StandardCopyOption.REPLACE_EXISTING);
 
-                String message;
-                while ((message = in.readLine()) != null) {
-                    System.out.println("Mensaje recibido: " + message);
-
-                    // Reenviar el mensaje a todos los clientes
-                    for (PrintWriter client : clients) {
-                        client.println(message);
-                    }
-
-                    // Guardar el mensaje en un archivo XML
-                    saveMessageToXML(message);
+                int count;
+                while ((count = in.read(bytes))>0){
+                    System.out.println(count);
+                    out.write(bytes,0,count);
                 }
+                out.close();
+                in.close();
+                socket.close();
+
+                System.out.println("Cerrando servidor");
+
             } catch (IOException e) {
                 e.printStackTrace();
-            } finally {
-                try {
-                    // Cuando un cliente se desconecta, quitarlo de la lista de clientes
-                    clients.remove(out);
-                    clientSocket.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
             }
         }
 
-        private void saveMessageToXML(String message) {
-
-        }
     }
 }
