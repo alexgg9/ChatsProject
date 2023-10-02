@@ -1,6 +1,8 @@
 package AccesoADatos.model.domain;
 
-import java.util.List;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
@@ -8,15 +10,18 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 @XmlRootElement(name = "Users")
 public class Users {
-	private List<User> users;
+	private Set<User> users;
 
+	 public Users() { 
+	        users = new HashSet<>();
+	    }
 	
 	@XmlElement(name = "User")
-	public List<User> getUsers() {
+	public Set<User> getUsers() {
 		return users;
 	}
 
-	public void setUsers(List<User> users) {
+	public void setUsers(Set<User> users) {
 		this.users = users;
 	}
 	
