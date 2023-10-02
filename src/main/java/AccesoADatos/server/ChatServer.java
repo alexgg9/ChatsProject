@@ -36,7 +36,7 @@ public class ChatServer {
                 Path filePath = Path.of(filename);
                 out = new FileOutputStream(filename);
                 byte[] bytes = new byte[8*1024];
-                Files.copy(in, filePath, StandardCopyOption.REPLACE_EXISTING);
+
 
                 int count;
                 while ((count = in.read(bytes))>0){
