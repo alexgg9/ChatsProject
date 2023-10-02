@@ -1,35 +1,38 @@
 package AccesoADatos.model.DAO;
+import javax.xml.bind.*;
+
 import AccesoADatos.model.domain.User;
+import AccesoADatos.model.domain.Users;
 
-import javax.xml.bind.JAXBContext;
-import javax.xml.bind.JAXBException;
-import javax.xml.bind.Marshaller;
-import javax.xml.bind.Unmarshaller;
 import java.io.File;
+import java.util.List;
+
 public class UserDAO {
+    private static final String XML_FILE = "users.xml";
 
+    public void saveUsers(List<User> users) {
+        try {
+            Users usersWrapper = new Users();
+            usersWrapper.setUsers(users);
 
-
-        private static final String XML_FILE = "users.xml";
-
-        public static void saveUser(User user) {
-            try {
-                JAXBContext context = JAXBContext.newInstance(User.class);
-                Marshaller marshaller = context.createMarshaller();
-                marshaller.marshal(user, new File(XML_FILE));
-            } catch (JAXBException e) {
-                e.printStackTrace();
-            }
-        }
-
-        public User loadUser() {
-            try {
-                JAXBContext context = JAXBContext.newInstance(User.class);
-                Unmarshaller unmarshaller = context.createUnmarshaller();
-                return (User) unmarshaller.unmarshal(new File(XML_FILE));
-            } catch (JAXBException e) {
-                e.printStackTrace();
-                return null;
-            }
+            JAXBContext context = JAXBContext.newInstance(Users.class);
+            Marshaller marshaller = context.createMarshaller();
+            marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
+            marshaller.marshal(usersWrapper, new File(XML_FILE));
+        } catch (JAXBException e) {
+            e.printStackTrace();
         }
     }
+
+    public List<User> loadUsers() {
+        try {
+            JAXBContext context = JAXBContext.newInstance(Users.class);
+            Unmarshaller unmarshaller = context.createUnmarshaller();
+            Users usersWrapper = (Users) unmarshaller.unmarshal(new File(XML_FILE));
+            return usersWrapper.getUsers();
+        } catch (JAXBException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+}

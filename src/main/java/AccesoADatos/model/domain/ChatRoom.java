@@ -18,6 +18,7 @@ public class ChatRoom implements Serializable {
      private List<Message> messages = new ArrayList<>();
 
     public ChatRoom() {
+    	users = new ArrayList<>();
     }
     
     
