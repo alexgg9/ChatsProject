@@ -25,7 +25,25 @@ public class ChatRoomDAO {
     public ChatRoomDAO() {
         chatRoom = loadChat("chat.xml");
     }
-  
+
+    public void createChatRoom(String chatRoomName) {
+
+        if (isChatRoomExist(chatRoomName)) {
+            System.out.println("La sala de chat ya existe.");
+            return;
+        }
+        ChatRoom newChatRoom = new ChatRoom();
+        newChatRoom.setName(chatRoomName);
+        saveChat(chatRoomName);
+
+        System.out.println("Sala de chat '" + chatRoomName + "' creada exitosamente.");
+    }
+
+    private boolean isChatRoomExist(String chatRoomName) {
+        String filename = chatRoomName + ".xml";
+        File file = new File(filename);
+        return file.exists();
+    }
     public void joinChat(String nickname) {
         User user = new User();
         user.setNickname(nickname);
@@ -44,12 +62,13 @@ public class ChatRoomDAO {
         chatRoom.getUsers().removeIf(user -> user.getNickname().equals(nickname));
     }
 
-    public void saveChat(String filename) {
+    public void saveChat(String chatRoomName) {
         try {
             JAXBContext context = JAXBContext.newInstance(ChatRoom.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            
+
+            String filename = chatRoomName + ".xml";
             // Si el archivo XML ya existe, carga los datos existentes
             ChatRoom existingChatRoom = loadChat(filename);
             

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ChatRoom>
+    <Messages>
+        <Message>
+            <Content>hola que tal chavales</Content>
+            <Sender>juan</Sender>
+            <Timestamp>Mon Oct 02 17:59:12 CEST 2023</Timestamp>
+        </Message>
+    </Messages>
+    <Users/>
+</ChatRoom>

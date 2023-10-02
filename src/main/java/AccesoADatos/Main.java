@@ -22,8 +22,10 @@ public class Main {
         String nickname = scanner.nextLine();
         User user = new User(nickname);
        	userDAO.addUser(user);
-        userDAO.saveUsers("users.xml"); 
-        
+        userDAO.saveUsers("users.xml");
+        System.out.print("Pon el nombre de la sala: ");
+        String chatRoomName = scanner.nextLine();
+        chatRoomDAO.createChatRoom(chatRoomName);
        
       
         chatRoomDAO.joinChat(nickname);
@@ -33,7 +35,7 @@ public class Main {
             String message = scanner.nextLine();
             if (message.equalsIgnoreCase("exit")) {
                 chatRoomDAO.leaveChat(nickname);
-                chatRoomDAO.saveChat("chat.xml");
+                chatRoomDAO.saveChat(chatRoomName);
                 System.out.println("Hasta luego, " + nickname + "!");
                 break;
             }
