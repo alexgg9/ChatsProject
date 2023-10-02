@@ -23,9 +23,9 @@ public class ChatRoomDAO {
     private ChatRoom chatRoom;
 
     public ChatRoomDAO() {
-        chatRoom = new ChatRoom();
+        chatRoom = loadChat("chat.xml");
     }
-
+  
     public void joinChat(String nickname) {
         User user = new User();
         user.setNickname(nickname);
@@ -49,19 +49,36 @@ public class ChatRoomDAO {
             JAXBContext context = JAXBContext.newInstance(ChatRoom.class);
             Marshaller marshaller = context.createMarshaller();
             marshaller.setProperty(Marshaller.JAXB_FORMATTED_OUTPUT, true);
-            marshaller.marshal(chatRoom, new File(filename));
+            
+            // Si el archivo XML ya existe, carga los datos existentes
+            ChatRoom existingChatRoom = loadChat(filename);
+            
+            // Agrega los nuevos datos al ChatRoom existente
+            existingChatRoom.getUsers().addAll(chatRoom.getUsers());
+            existingChatRoom.getMessages().addAll(chatRoom.getMessages());
+
+            // Guarda los datos actualizados en el archivo XML
+            marshaller.marshal(existingChatRoom, new File(filename));
+
+            System.out.println("Chat guardado correctamente en " + filename);
         } catch (JAXBException e) {
             e.printStackTrace();
         }
     }
 
-    public void loadChat(String filename) {
+    private ChatRoom loadChat(String filename) {
         try {
-            JAXBContext context = JAXBContext.newInstance(ChatRoom.class);
-            Unmarshaller unmarshaller = context.createUnmarshaller();
-            chatRoom = (ChatRoom) unmarshaller.unmarshal(new File(filename));
+            File file = new File(filename);
+            if (file.exists()) {
+                JAXBContext context = JAXBContext.newInstance(ChatRoom.class);
+                Unmarshaller unmarshaller = context.createUnmarshaller();
+                return (ChatRoom) unmarshaller.unmarshal(file);
+            }
         } catch (JAXBException e) {
             e.printStackTrace();
         }
+        return new ChatRoom(); 
     }
 }
+
+
