@@ -18,11 +18,11 @@ public class Main {
         ChatRoomDAO chatRoomDAO	= new ChatRoomDAO();
         UserDAO userDAO = new UserDAO();
         Scanner scanner = new Scanner(System.in);
-        Users users = new Users();
         System.out.print("Ingresa tu apodo: ");
         String nickname = scanner.nextLine();
-       
-        userDAO.saveUsers(users.getUsers()); 
+        User user = new User(nickname);
+       	userDAO.addUser(user);
+        userDAO.saveUsers("users.xml"); 
         
        
       
