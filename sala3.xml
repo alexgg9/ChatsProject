@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ChatRoom>
+    <Messages>
+        <Message>
+            <Content>eee</Content>
+            <Sender>alex</Sender>
+            <Timestamp>Tue Oct 03 09:40:41 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>eee</Content>
+            <Sender>alex</Sender>
+            <Timestamp>Tue Oct 03 09:40:42 CEST 2023</Timestamp>
+        </Message>
+    </Messages>
+    <Users/>
+</ChatRoom>
