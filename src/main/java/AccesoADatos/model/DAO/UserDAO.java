@@ -4,6 +4,7 @@ import javax.xml.bind.*;
 import AccesoADatos.model.domain.ChatRoom;
 import AccesoADatos.model.domain.User;
 import AccesoADatos.model.domain.Users;
+import AccesoADatos.sharefolder.ConfigManager;
 
 import java.io.File;
 import java.util.List;
@@ -12,9 +13,9 @@ public class UserDAO {
     private static final String XML_FILE = "users.xml";
     private Users users;
   
-    
+    String path = ConfigManager.readSharedFolderPath();
     public UserDAO(){
-    		users = loadUsers("users.xml");
+    		users = loadUsers(path+"users.xml");
     			
        }
 

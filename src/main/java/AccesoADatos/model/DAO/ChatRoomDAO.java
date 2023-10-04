@@ -1,3 +1,4 @@
+
 package AccesoADatos.model.DAO;
 
 
@@ -11,9 +12,9 @@ import AccesoADatos.model.domain.Message;
 import AccesoADatos.model.domain.User;
 
 import java.io.File;
-import java.util.ArrayList;
+
 import java.util.Date;
-import java.util.List;
+
 
 public class ChatRoomDAO {
     private ChatRoom chatRoom;
@@ -95,5 +96,4 @@ public class ChatRoomDAO {
         return new ChatRoom(); 
     }
 }
-
 
