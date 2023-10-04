@@ -6,7 +6,7 @@ target/
 ### IntelliJ IDEA ###
 <<<<<<< HEAD
 idea
-=======
+========
 .idea/
 >>>>>>> 82362fee4e446fb3f71b748b98436e863d681b5f
 .idea/modules.xml
@@ -27,6 +27,7 @@ idea
 .sts4-cache
 .metadata/
 bin/
+config/
 
 ### NetBeans ###
 /nbproject/private/

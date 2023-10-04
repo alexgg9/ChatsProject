@@ -15,7 +15,7 @@ public class ConfigManager {
             Unmarshaller unmarshaller = context.createUnmarshaller();
 
             // Leer el archivo de configuración
-            File configFile = new File("config\\config.xml");
+            File configFile = new File("config/config.xml");
             Config config = (Config) unmarshaller.unmarshal(configFile);
 
             // Obtener la ruta compartida del objeto Config
