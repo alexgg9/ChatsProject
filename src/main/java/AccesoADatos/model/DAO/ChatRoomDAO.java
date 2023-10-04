@@ -1,10 +1,6 @@
 package AccesoADatos.model.DAO;
 
 
-
-
-
-	 
 import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Marshaller;
@@ -23,7 +19,7 @@ public class ChatRoomDAO {
     private ChatRoom chatRoom;
 
     public ChatRoomDAO() {
-        chatRoom = loadChat("chat.xml");
+        chatRoom = loadChat("");
     }
 
     public void createChatRoom(String chatRoomName) {
@@ -85,7 +81,7 @@ public class ChatRoomDAO {
         }
     }
 
-    private ChatRoom loadChat(String filename) {
+    public ChatRoom loadChat(String filename) {
         try {
             File file = new File(filename);
             if (file.exists()) {

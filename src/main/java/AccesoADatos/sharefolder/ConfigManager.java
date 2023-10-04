@@ -1,4 +1,4 @@
-package AccesoADatos.SharedFolder;
+package AccesoADatos.sharefolder;
 import AccesoADatos.model.domain.Config;
 
 import javax.xml.bind.JAXBException;

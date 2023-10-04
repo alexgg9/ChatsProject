@@ -2,19 +2,9 @@
 <ChatRoom>
     <Messages>
         <Message>
-            <Content>hola que tal chavales</Content>
-            <Sender>juan</Sender>
-            <Timestamp>Mon Oct 02 17:59:12 CEST 2023</Timestamp>
-        </Message>
-        <Message>
-            <Content>hola</Content>
-            <Sender>juan</Sender>
-            <Timestamp>Tue Oct 03 09:41:16 CEST 2023</Timestamp>
-        </Message>
-        <Message>
-            <Content>ee</Content>
-            <Sender>juan</Sender>
-            <Timestamp>Tue Oct 03 09:41:18 CEST 2023</Timestamp>
+            <Content>Real Madrid 3 Napoles 1</Content>
+            <Sender>alex</Sender>
+            <Timestamp>Tue Oct 03 17:29:14 CEST 2023</Timestamp>
         </Message>
     </Messages>
     <Users/>
