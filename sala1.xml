@@ -6,6 +6,56 @@
             <Sender>alex</Sender>
             <Timestamp>Tue Oct 03 17:29:14 CEST 2023</Timestamp>
         </Message>
+        <Message>
+            <Content>hola que tal</Content>
+            <Sender>Fcar16</Sender>
+            <Timestamp>Wed Oct 04 10:53:19 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>ya ves</Content>
+            <Sender>fcar16</Sender>
+            <Timestamp>Wed Oct 04 10:54:46 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola que tal pepe</Content>
+            <Sender>fcar</Sender>
+            <Timestamp>Wed Oct 04 10:57:29 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>eee</Content>
+            <Sender>fcar</Sender>
+            <Timestamp>Wed Oct 04 10:58:31 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>aqui estamos</Content>
+            <Sender>fcar</Sender>
+            <Timestamp>Wed Oct 04 10:58:35 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>Mensaje nuevo</Content>
+            <Sender>fcar</Sender>
+            <Timestamp>Wed Oct 04 11:08:08 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>ext</Content>
+            <Sender>juan ca</Sender>
+            <Timestamp>Wed Oct 04 11:17:05 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>Hola antonio</Content>
+            <Sender>jose antonio</Sender>
+            <Timestamp>Wed Oct 04 11:18:15 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola que tal</Content>
+            <Sender>fcar16</Sender>
+            <Timestamp>Wed Oct 04 11:18:57 CEST 2023</Timestamp>
+        </Message>
+        <Message>
+            <Content>hola que tak</Content>
+            <Sender>fcar16</Sender>
+            <Timestamp>Wed Oct 04 11:19:54 CEST 2023</Timestamp>
+        </Message>
     </Messages>
     <Users/>
 </ChatRoom>
