@@ -27,6 +27,7 @@ idea
 .sts4-cache
 .metadata/
 bin/
+config/
 
 ### NetBeans ###
 /nbproject/private/
