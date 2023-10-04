@@ -1,3 +1,4 @@
+
 package AccesoADatos.model.DAO;
 
 
@@ -15,15 +16,15 @@ import AccesoADatos.model.domain.Message;
 import AccesoADatos.model.domain.User;
 
 import java.io.File;
-import java.util.ArrayList;
+
 import java.util.Date;
-import java.util.List;
+
 
 public class ChatRoomDAO {
     private ChatRoom chatRoom;
 
     public ChatRoomDAO() {
-        chatRoom = loadChat("chat.xml");
+        chatRoom = loadChat("");
     }
 
     public void createChatRoom(String chatRoomName) {
@@ -85,7 +86,7 @@ public class ChatRoomDAO {
         }
     }
 
-    private ChatRoom loadChat(String filename) {
+    public ChatRoom loadChat(String filename) {
         try {
             File file = new File(filename);
             if (file.exists()) {
@@ -99,5 +100,4 @@ public class ChatRoomDAO {
         return new ChatRoom(); 
     }
 }
-
 
