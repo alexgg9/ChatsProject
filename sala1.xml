@@ -7,7 +7,6 @@
             <Timestamp>Tue Oct 03 17:29:14 CEST 2023</Timestamp>
         </Message>
         <Message>
-<<<<<<< HEAD
             <Content>hola que tal</Content>
             <Sender>Fcar16</Sender>
             <Timestamp>Wed Oct 04 10:53:19 CEST 2023</Timestamp>
@@ -56,7 +55,6 @@
             <Content>hola que tak</Content>
             <Sender>fcar16</Sender>
             <Timestamp>Wed Oct 04 11:19:54 CEST 2023</Timestamp>
-=======
             <Content>que barbaridad</Content>
             <Sender>xela</Sender>
             <Timestamp>Wed Oct 04 10:54:23 CEST 2023</Timestamp>
@@ -80,7 +78,6 @@
             <Content>hola que xela como estas</Content>
             <Sender>fcar16</Sender>
             <Timestamp>Wed Oct 04 11:25:24 CEST 2023</Timestamp>
->>>>>>> 80d6f48ef30592c15911ba2e69712be7e47242ba
         </Message>
     </Messages>
     <Users/>

@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <ChatRoom>
-<<<<<<< HEAD
     <Messages/>
-=======
+
     <Messages>
         <Message>
             <Content>hola hay alguien</Content>
@@ -10,6 +9,6 @@
             <Timestamp>Wed Oct 04 11:26:18 CEST 2023</Timestamp>
         </Message>
     </Messages>
->>>>>>> 80d6f48ef30592c15911ba2e69712be7e47242ba
+
     <Users/>
 </ChatRoom>
